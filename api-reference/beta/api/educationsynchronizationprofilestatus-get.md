@@ -28,6 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 
 <!-- { "blockType": "ignored" } -->
+
 ```http
 GET /synchronizationProfiles/{id}/profileStatus
 ```
@@ -53,22 +54,28 @@ If successful, this method returns a `200 OK` response code and an [educationsyn
 The following is an example of the request.
 
 # [HTTP](#tab/http)
+
 <!-- {
   "blockType": "request",
   "name": "get_educationSynchronizationProfile_status"
 }-->
+
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/education/synchronizationProfiles/{id}/profileStatus
 ```
+
 # [C#](#tab/csharp)
+
 [!INCLUDE [sample-code](../includes/snippets/csharp/get-educationsynchronizationprofile-status-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [JavaScript](#tab/javascript)
+
 [!INCLUDE [sample-code](../includes/snippets/javascript/get-educationsynchronizationprofile-status-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Objective-C](#tab/objc)
+
 [!INCLUDE [sample-code](../includes/snippets/objc/get-educationsynchronizationprofile-status-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
@@ -84,6 +91,7 @@ The following is an example of the response.
   "blockType": "response",
   "@odata.type": "microsoft.graph.educationSynchronizationProfileStatus",
 } -->
+
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
@@ -93,7 +101,8 @@ Content-length: 232
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#education/synchronizationProfiles/{id}/profileStatus/$entity",
     "id": "86904b1e-c7d0-4ead-b13a-98f11fc400ee",
     "status": "inProgress",
-    "lastSynchronizationDateTime": "2017-07-04T22:06:37.6472621Z"
+    "lastSynchronizationDateTime": "2017-07-04T22:06:37.6472621Z",
+    "lastUpdateDateTime": "2017-07-04T22:06:37.6472621Z"
 }
 ```
 
@@ -108,5 +117,3 @@ Content-length: 232
   "suppressions": [
   ]
 }-->
-
-
