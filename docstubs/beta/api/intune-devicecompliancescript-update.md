@@ -1,0 +1,145 @@
+---
+title: "Update deviceComplianceScript"
+description: ""
+localization_priority: Normal
+author: "$(metadata.owner)"
+ms.prod: "microsoft-identity-platform"
+doc_type: "apiPageType"
+---
+
+# Update deviceComplianceScript
+
+Namespace: microsoft.graph
+
+[!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
+
+Update the properties of a deviceComplianceScript object.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+| Permission type                        | Permissions (from most to least privileged) |
+| :------------------------------------- | :------------------------------------------ |
+| Delegated (work or school account)     |                                             |
+| Delegated (personal Microsoft account) |                                             |
+| Application                            |                                             |
+
+## HTTP request
+
+<!-- {
+  "blockType": "ignored"
+}
+-->
+
+```http
+
+```
+
+## Request headers
+
+| Name          | Description                 |
+| :------------ | :-------------------------- |
+| Authorization | Bearer {token}. Required.   |
+| Content-Type  | application/json. Required. |
+
+## Request Body
+
+In the request body, supply JSON representation of the [deviceComplianceScript](../resources/intune-devicecompliancescript.md) object.
+
+<!-- Actions and Functions -->
+
+<!-- CRUD Methods -->
+
+The following table shows the properties that are required when you create a deviceComplianceScript object.
+
+| Property               | Type              | Description                                                                                  |
+| :--------------------- | :---------------- | :------------------------------------------------------------------------------------------- |
+| createdDateTime        | DateTimeOffset    | The timestamp of when the device compliance script was created. This property is read-only.  |
+| description            | String            | Description of the device compliance script                                                  |
+| detectionScriptContent | Binary            | The entire content of the detection powershell script                                        |
+| displayName            | String            | Name of the device compliance script                                                         |
+| enforceSignatureCheck  | Boolean           | Indicate whether the script signature needs be checked                                       |
+| id                     | String            | Unique Identifier for the device compliance script Read-only.                                |
+| lastModifiedDateTime   | DateTimeOffset    | The timestamp of when the device compliance script was modified. This property is read-only. |
+| publisher              | String            | Name of the device compliance script publisher                                               |
+| roleScopeTagIds        | String collection | List of Scope Tag IDs for the device compliance script                                       |
+| runAs32Bit             | Boolean           | Indicate whether PowerShell script(s) should run as 32-bit                                   |
+| runAsAccount           | String            | Indicates the type of execution context                                                      |
+| version                | String            | Version of the device compliance script                                                      |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a deviceComplianceScript object in the response body.
+
+## Examples
+
+### Request
+
+<!-- {
+  "blockType": "request",
+  "name": "update_devicecompliancescript"
+}
+-->
+
+```http
+PATCH https://graph.microsoft.com/beta/deviceManagement/deviceComplianceScripts/{id}
+
+Content-Type: application/json
+Content-Length: 434
+
+{
+  "@odata.type": "#microsoft.graph.deviceComplianceScript",
+  "createdDateTime": "DateTimeOffset",
+  "description": "String",
+  "detectionScriptContent": "Binary",
+  "displayName": "String",
+  "enforceSignatureCheck": "Boolean",
+  "lastModifiedDateTime": "DateTimeOffset",
+  "publisher": "String",
+  "roleScopeTagIds": [
+    "String"
+  ],
+  "runAs32Bit": "Boolean",
+  "runAsAccount": "String",
+  "version": "String"
+}
+
+```
+
+### Response
+
+**Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.management.services.api.deviceComplianceScript"
+}
+-->
+
+```http
+HTTP 1.1 200 OK
+
+Content-Type: application/json
+{
+  "value": {
+  "@odata.type": "#microsoft.graph.deviceComplianceScript",
+  "createdDateTime": "DateTimeOffset",
+  "description": "String",
+  "detectionScriptContent": "Binary",
+  "displayName": "String",
+  "enforceSignatureCheck": "Boolean",
+  "id": "String(identifier)",
+  "lastModifiedDateTime": "DateTimeOffset",
+  "publisher": "String",
+  "roleScopeTagIds": [
+    "String"
+  ],
+  "runAs32Bit": "Boolean",
+  "runAsAccount": "String",
+  "version": "String"
+}
+}
+
+```
